@@ -1,0 +1,39 @@
+<%= link_to 'Countries', countries_path %>
+<p>
+  <strong>Id:</strong>
+  <%= @country.id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</p>
+
+<p><strong>Cities:</strong></p>
+<%= link_to 'New city', new_country_city_path(@country) %>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  <% @cities.each do |city| %>
+    <tr>
+      <td>
+        <%= city.id %>
+      </td>
+      <td>
+        <%= city.name %>
+      </td>
+      <td>
+        <%= link_to 'Show', city_path(city) %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_city_path(city) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', city_path(city), method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

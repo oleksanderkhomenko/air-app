@@ -1,0 +1,3 @@
+<h1>New Ticket</h1>
+<%= link_to 'Tickets', @plane %>
+<%= render 'form', path: plane_tickets_path(@plane), method: 'post' %>

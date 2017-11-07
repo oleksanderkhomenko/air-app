@@ -1,0 +1,69 @@
+<%= link_to 'Back to city', city_path(@plane.city_id) %>
+<p>
+  <strong>Id:</strong>
+  <%= @plane.id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @plane.name %>
+</p>
+
+<p><strong>Passengers:</strong></p>
+<%= link_to 'New passenger', new_plane_passenger_path(@plane) %>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  <% @passengers.each do |passenger| %>
+    <tr>
+      <td>
+        <%= passenger.id %>
+      </td>
+      <td>
+        <%= passenger.name %>
+      </td>
+      <td>
+        <%= link_to 'Show', passenger_path(passenger) %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_passenger_path(passenger) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', passenger_path(passenger), method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><strong>Tickets:</strong></p>
+<%= link_to 'New ticket', new_plane_ticket_path(@plane) %>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td>
+        <%= ticket.id %>
+      </td>
+      <td>
+        <%= ticket.name %>
+      </td>
+      <td>
+        <%= link_to 'Show', ticket_path(ticket) %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_ticket_path(ticket) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', ticket_path(ticket), method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

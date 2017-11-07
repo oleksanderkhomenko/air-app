@@ -1,0 +1,3 @@
+<h1>Edit Ticket</h1>
+<%= link_to 'Back to plane', plane_path(@ticket.plane_id) %>
+<%= render 'form', path: ticket_path(@ticket), method: 'patch' %>
